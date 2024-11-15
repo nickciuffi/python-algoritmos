@@ -2,12 +2,12 @@ import random
 import time
 from classes import Bubble
 
-def rodaBubble(nums):
-  bubble = Bubble();
+def rodaAlgoritmo(nums, algo):
+  
 
   inicio = time.time()
 
-  elementos_ordenados, trocas, comparacoes = bubble.sort(nums)
+  elementos_ordenados, trocas, comparacoes = algo.sort(nums)
 
   fim = time.time()
   tempo_execucao = fim - inicio
@@ -20,11 +20,11 @@ def rodaBubble(nums):
   print(f"Tempo de Execução: {int(tempo_minutos)} minutos e {tempo_segundos:.2f} segundos")
   print(f"Quantidade de Trocas: {trocas}")
   print(f"Quantidade de Comparações: {comparacoes}")
-  print("Primeiros elementos ordenados:", elementos_ordenados[:100])
+  #print("Primeiros elementos ordenados:", elementos_ordenados[:100])
 
 
 with open("numeros-melhor-1k.txt", "r") as arquivo:
   numeros = [int(linha.strip()) for linha in arquivo]
   
-rodaBubble(numeros)
+rodaAlgoritmo(numeros, Bubble())
   
