@@ -1,6 +1,6 @@
 import random
 import time
-from classes import Bubble
+from classes import Bubble, ImprovedBubble
 
 def rodaAlgoritmo(nums, algo):
   
@@ -22,9 +22,10 @@ def rodaAlgoritmo(nums, algo):
   print(f"Quantidade de Comparações: {comparacoes}")
   #print("Primeiros elementos ordenados:", elementos_ordenados[:100])
 
-
-with open("numeros-melhor-1k.txt", "r") as arquivo:
+#Aqui voce escolhe qual arquivo vai ser lido
+with open("numeros-pior-1k.txt", "r") as arquivo:
   numeros = [int(linha.strip()) for linha in arquivo]
   
-rodaAlgoritmo(numeros, Bubble())
+#aqui voce escolhe qual classe vai ser executada
+rodaAlgoritmo(numeros, ImprovedBubble())
   
