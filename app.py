@@ -4,7 +4,6 @@ from classes import Bubble, ImprovedBubble
 
 def rodaAlgoritmo(nums, algo):
   
-
   inicio = time.time()
 
   elementos_ordenados, trocas, comparacoes = algo.sort(nums)
@@ -21,11 +20,17 @@ def rodaAlgoritmo(nums, algo):
   print(f"Quantidade de Trocas: {trocas}")
   print(f"Quantidade de Comparações: {comparacoes}")
   #print("Primeiros elementos ordenados:", elementos_ordenados[:100])
+  
+def lerArquivo(nomeArquivo):
+  numeros = []
+  with open(nomeArquivo, "r") as arquivo:
+    for linha in arquivo:
+      numeros.append(int(linha.strip()))
+  return numeros
 
 #Aqui voce escolhe qual arquivo vai ser lido
-with open("numeros-pior-1k.txt", "r") as arquivo:
-  numeros = [int(linha.strip()) for linha in arquivo]
+nums = lerArquivo("numeros-medio-10k.txt")
   
 #aqui voce escolhe qual classe vai ser executada
-rodaAlgoritmo(numeros, ImprovedBubble())
-  
+rodaAlgoritmo(nums, Bubble())
+
