@@ -1,6 +1,6 @@
 import random
 import time
-from classes import Bubble, ImprovedBubble, Comb, Heap
+from classes import Bubble , ImprovedBubble, Comb, Heap,insertion_Sort,SelectionSort,MergeSort, QuickSort
 
 def rodaAlgoritmo(nums, algo):
   
@@ -15,11 +15,12 @@ def rodaAlgoritmo(nums, algo):
   tempo_minutos = tempo_execucao // 60
   tempo_segundos = tempo_execucao % 60
 
-  print(f"Tempo de Execução: {tempo_execucao} segundos")
-  print(f"Tempo de Execução: {int(tempo_minutos)} minutos e {tempo_segundos:.2f} segundos")
+  print("Primeiros elementos ordenados:", elementos_ordenados[:100])
+  print(f"Tempo de Execução: {tempo_execucao:.5f} segundos")
+  print(f"Tempo de Execução: {int(tempo_minutos)} minutos e {tempo_segundos:.5f} segundos")
   print(f"Quantidade de Trocas: {trocas}")
   print(f"Quantidade de Comparações: {comparacoes}")
-  #print("Primeiros elementos ordenados:", elementos_ordenados[:100])
+  print("Primeiros elementos desordenados:", elementos_ordenados[:100])
   
 def lerArquivo(nomeArquivo):
   numeros = []
@@ -29,8 +30,8 @@ def lerArquivo(nomeArquivo):
   return numeros
 
 #Aqui voce escolhe qual arquivo vai ser lido
-nums = lerArquivo("numeros-melhor-10k.txt")
+nums = lerArquivo("numeros-medio-1k.txt")
   
 #aqui voce escolhe qual classe vai ser executada
-rodaAlgoritmo(nums, Bubble())
+rodaAlgoritmo(nums, insertion_Sort())
 
