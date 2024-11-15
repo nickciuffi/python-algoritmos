@@ -1,6 +1,6 @@
 import random
 import time
-from classes import Bubble, ImprovedBubble
+from classes import Bubble, ImprovedBubble, Comb, Heap
 
 def rodaAlgoritmo(nums, algo):
   
@@ -29,7 +29,7 @@ def lerArquivo(nomeArquivo):
   return numeros
 
 #Aqui voce escolhe qual arquivo vai ser lido
-nums = lerArquivo("numeros-medio-10k.txt")
+nums = lerArquivo("numeros-melhor-10k.txt")
   
 #aqui voce escolhe qual classe vai ser executada
 rodaAlgoritmo(nums, Bubble())
