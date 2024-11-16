@@ -15,12 +15,12 @@ def rodaAlgoritmo(nums, algo):
   tempo_minutos = tempo_execucao // 60
   tempo_segundos = tempo_execucao % 60
 
-  print("Primeiros elementos ordenados:", elementos_ordenados[:100])
+
   print(f"Tempo de Execução: {tempo_execucao:.5f} segundos")
   print(f"Tempo de Execução: {int(tempo_minutos)} minutos e {tempo_segundos:.5f} segundos")
   print(f"Quantidade de Trocas: {trocas}")
   print(f"Quantidade de Comparações: {comparacoes}")
-  print("Primeiros elementos desordenados:", elementos_ordenados[:100])
+  print("Primeiros elementos ordenados:", elementos_ordenados[:100])
   
 def lerArquivo(nomeArquivo):
   numeros = []
@@ -30,8 +30,9 @@ def lerArquivo(nomeArquivo):
   return numeros
 
 #Aqui voce escolhe qual arquivo vai ser lido
-nums = lerArquivo("numeros-medio-1k.txt")
+nums = lerArquivo("numeros-pior-100k.txt")
+print("Primeiros elementos desordenados:", nums[:100])
   
 #aqui voce escolhe qual classe vai ser executada
-rodaAlgoritmo(nums, insertion_Sort())
+rodaAlgoritmo(nums, Comb())
 

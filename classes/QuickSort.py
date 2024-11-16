@@ -1,5 +1,8 @@
 class QuickSort:
-    def quick_sort(arr, contagem_comparacoes=0, contagem_trocas=0):
+    def sort(self, arr):
+        return self.quick_sort(arr)
+
+    def quick_sort(self, arr, contagem_comparacoes=0, contagem_trocas=0):
         if len(arr) <= 1:
             return arr, contagem_comparacoes, contagem_trocas
         else:
@@ -20,11 +23,11 @@ class QuickSort:
                     contagem_trocas += 1  # mesma ideia para mover à lista da direita
 
             # Chamadas recursivas para as sublistas esquerda e direita
-            sorted_left, contagem_comparacoes_left, contagem_trocas_left = QuickSort.quick_sort(left, contagem_comparacoes, contagem_trocas)
-            sorted_right, contagem_comparacoes_right, contagem_trocas_right = QuickSort.quick_sort(right, contagem_comparacoes, contagem_trocas)
+            sorted_left, comp_left, troca_left = self.quick_sort(left, contagem_comparacoes, contagem_trocas)
+            sorted_right, comp_right, troca_right = self.quick_sort(right, contagem_comparacoes, contagem_trocas)
 
             # Soma os resultados das contagens de comparações e trocas
-            total_comparacoes = contagem_comparacoes_left + contagem_comparacoes_right
-            total_trocas = contagem_trocas_left + contagem_trocas_right
+            total_comparacoes = comp_left + comp_right
+            total_trocas = troca_left + troca_right
 
             return sorted_left + middle + sorted_right, total_comparacoes, total_trocas
