@@ -34,5 +34,5 @@ nums = lerArquivo("numeros-pior-100k.txt")
 print("Primeiros elementos desordenados:", nums[:100])
   
 #aqui voce escolhe qual classe vai ser executada
-rodaAlgoritmo(nums, Comb())
+rodaAlgoritmo(nums, Bubble())
 
